@@ -1,6 +1,6 @@
 
 //* VARIABLES
-const tabla=document.querySelector("#tabla")
+
 const error=document.querySelector("#error")
 const formulario=document.querySelector("#formulario")
 const campoMatricula=document.querySelector("#matricula")
@@ -89,10 +89,10 @@ formulario.addEventListener('submit', (ev) => {
         .then((respuesta)=>{
             return buscarPropietario(respuesta)})//* Matricula Encontrada
         .then((respuesta)=>{
-            return buscarMultas(respuesta)})
+            return buscarMultas(respuesta)})//* Numero de Multas
         .then((respuesta)=>{
             console.log(respuesta);
-        })
+            return pintarTabla(objPintar)})
 
 
 });
@@ -136,7 +136,7 @@ function buscarPropietario(matriculaEncontrada) {
 function buscarMultas(nombre) {
     const multas=arrayMultas.find((item)=>item.nombre===nombre)?.multa
     return new Promise((resolve,reject)=>{
-        if(multas) resolve(`el señor ${nombre} tiene ${multas} multas`) ;
+        if(multas) resolve(`el señor ${nombre} tiene ${multas} multas`,objPintar.multas=multas) ;
           else reject(pintarError(` el señor ${nombre} no tiene multas `))
     })
 }
@@ -144,25 +144,21 @@ function buscarMultas(nombre) {
 
 
 
-// function pintarTabla(array) {
+function pintarTabla(array) {
+    const tabla=document.querySelector("#tabla")
+    let tr=document.createElement("tr")
+             tabla.append(tr)
 
-//     let tr=document.createElement("tr")
-//              tabla.append(tr)
+        array.forEach(({matricula,propietario,multas}) => {
 
-//         array.forEach(({matricula,modelo,propietario,multas}) => {
-
-//              tr.innerHTML= ` <td>${matricula}</td>
-//                              <td>${modelo}</td>
-//                              <td>${propietario}</td>
-//                              <td>${multas}</td>`
+             tr.innerHTML= ` <td>${matricula}</td>
+                             <td>${propietario}</td>
+                             <td>${multas}</td>`
             
-//             tr.append(tdTmatricula)
-//             tr.append(tdmodelo)
-//             tr.append(tdpropietario)
-//             tr.append(tdmultas)
-//         });
+          
+        });
        
-// }
+}
 
 
 function pintarError(error) {
