@@ -161,6 +161,8 @@ function pintarTabla(array) {
 }
 
 
+
+
 function pintarError(error) {
     parrafo.textContent=error
 }
