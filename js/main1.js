@@ -147,7 +147,7 @@ function buscarMultas(nombre) {
 function pintarTabla(array) {
     const tabla=document.querySelector("#tabla")
     let tr=document.createElement("tr")
-             tabla.append(tr)
+          
 
         array.forEach(({matricula,propietario,multas}) => {
 
