@@ -93,7 +93,7 @@ formulario.addEventListener('submit', (ev) => {
         .then((respuesta)=>{
             console.log(respuesta);
             return pintarTabla(objPintar)})
-
+            console.log(objPintar);
 
 });
 
@@ -145,6 +145,7 @@ function buscarMultas(nombre) {
 
 
 function pintarTabla(array) {
+
     const tabla=document.querySelector("#tabla")
     let tr=document.createElement("tr")
           
