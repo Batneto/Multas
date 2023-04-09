@@ -1,0 +1,65 @@
+	/* CSS rules go here */
+
+		/* Center the form */
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 20px auto;
+			max-width: 400px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Style the text input and submit button */
+		input[type="text"], input[type="submit"] {
+			padding: 10px;
+			margin: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			font-size: 16px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			cursor: pointer;
+		}
+
+		/* Style the error message */
+		#error {
+			color: red;
+			font-weight: bold;
+			margin: 10px;
+		}
+
+		/* Center the table and add some spacing between cells */
+		table {
+			margin: 20px auto;
+			border-collapse: collapse;
+			border-spacing: 0;
+			width: 100%;
+			max-width: 800px;
+		}
+
+		th, td {
+			padding: 10px;
+			border: 1px solid #ccc;
+			text-align: center;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+
+		th {
+			background-color: #4CAF50;
+			color: white;
+			font-weight: bold;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
